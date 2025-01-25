@@ -1,4 +1,6 @@
+
 import mongoose from "mongoose";
+
 const postSchema = new mongoose.Schema({
     caption: {
         type: String,
@@ -13,6 +15,8 @@ const postSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "User"
     }
-});
+}, { timestamps: true });
+
 const post = mongoose.model("Post", postSchema); // post collection
+
 export default post;
